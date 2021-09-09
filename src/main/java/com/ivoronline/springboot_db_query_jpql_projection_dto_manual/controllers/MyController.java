@@ -14,13 +14,13 @@ public class MyController {
   @Autowired PersonRepository personRepository;
 
   //================================================================
-  // RETURN DTO
+  // RETURN PERSON DTO
   //================================================================
-  @RequestMapping("ReturnDTO")
-  PersonDTO returnDTO() throws JsonProcessingException {
+  @RequestMapping("ReturnPersonDTO")
+  PersonDTO returnPersonDTO() throws JsonProcessingException {
 
     //GET COLUMNS
-    Object[] columns = (Object[]) personRepository.returnPerson();  //["John",20]
+    Object[] columns = (Object[]) personRepository.selectPerson();  //["John",20]
 
     //DISPLAY COLUMNS
     String columnsJSON = new ObjectMapper().writeValueAsString(columns);

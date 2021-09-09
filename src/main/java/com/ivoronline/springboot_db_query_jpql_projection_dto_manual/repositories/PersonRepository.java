@@ -5,11 +5,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 public interface PersonRepository extends CrudRepository<Person, Integer> {
-
-  //=======================================================================================
-  // RETURN PERSON VIEW
-  //=======================================================================================
   @Query(nativeQuery = true, value = "SELECT name, age FROM PERSON WHERE NAME = 'John'")
-  Object returnPerson();
-
+  Object selectPerson();
 }
